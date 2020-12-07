@@ -1,0 +1,103 @@
+partial
+xkb_compatibility "super_mappings" {
+    interpret KP_Left {
+        repeat= True;
+        action= RedirectKey(keycode=<LEFT>, clearmods=Super);
+    };
+    interpret KP_Right {
+        repeat= True;
+        action= RedirectKey(keycode=<RGHT>, clearmods=Super);
+    };
+    interpret KP_Up {
+        repeat= True;
+        action= RedirectKey(keycode=<UP>, clearmods=Super);
+    };
+    interpret KP_Down {
+        repeat= True;
+        action= RedirectKey(keycode=<DOWN>, clearmods=Super);
+    };
+    interpret KP_Prior {
+        repeat= True;
+        action= RedirectKey(keycode=<PGUP>, clearmods=Super);
+    };
+    interpret KP_Next {
+        repeat= True;
+        action= RedirectKey(keycode=<PGDN>, clearmods=Super);
+    };
+    interpret KP_Home {
+        repeat= True;
+        action= RedirectKey(keycode=<HOME>, clearmods=Super);
+    };
+    interpret KP_End {
+        repeat= True;
+        action= RedirectKey(keycode=<END>, clearmods=Super);
+    };
+    interpret KP_Enter {
+        repeat= True;
+        action= RedirectKey(keycode=<RTRN>, clearmods=Super);
+    };
+    interpret KP_Add {
+        repeat= True;
+        action= RedirectKey(keycode=<BKSP>, clearmods=Super);
+    };
+    interpret KP_Delete {
+        repeat= True;
+        action= RedirectKey(keycode=<DELE>, clearmods=Super);
+    };
+    interpret KP_1 {
+        repeat= True;
+        action= RedirectKey(keycode=<AE01>, clearmods=Mod3);
+    };
+    interpret KP_2 {
+        repeat= True;
+        action= RedirectKey(keycode=<AE02>, clearmods=Mod3);
+    };
+    interpret KP_3 {
+        repeat= True;
+        action= RedirectKey(keycode=<AE03>, clearmods=Mod3);
+    };
+    interpret KP_4 {
+        repeat= True;
+        action= RedirectKey(keycode=<AE04>, clearmods=Mod3);
+    };
+    interpret KP_5 {
+        repeat= True;
+        action= RedirectKey(keycode=<AE05>, clearmods=Mod3);
+    };
+    interpret KP_6 {
+        repeat= True;
+        action= RedirectKey(keycode=<AE06>, clearmods=Mod3);
+    };
+    interpret KP_7 {
+        repeat= True;
+        action= RedirectKey(keycode=<AE07>, clearmods=Mod3);
+    };
+    interpret KP_8 {
+        repeat= True;
+        action= RedirectKey(keycode=<AE08>, clearmods=Mod3);
+    };
+    interpret KP_9 {
+        repeat= True;
+        action= RedirectKey(keycode=<AE09>, clearmods=Mod3);
+    };
+    interpret KP_0 {
+        repeat= True;
+        action= RedirectKey(keycode=<AE10>, clearmods=Mod3);
+    };
+    interpret KP_Subtract {
+        repeat= True;
+        action= RedirectKey(keycode=<AE11>, clearmods=Mod3);
+    };
+    interpret KP_Equal {
+        repeat= True;
+        action= RedirectKey(keycode=<AE12>, clearmods=Mod3);
+    };
+    interpret KP_Separator {
+        repeat= True;
+        action= RedirectKey(keycode=<AB09>, clearmods=Mod3);
+    };
+    interpret F13 {
+        repeat= True;
+        action= RedirectKey(keycode=<LEFT>, clearmods=Super, mods=Alt);
+    };
+};

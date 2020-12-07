@@ -1,0 +1,9 @@
+output HDMI-0
+off
+output VIRTUAL1
+off
+output eDP1
+crtc 4
+mode 1920x1080
+pos 0x0
+rate 60.01

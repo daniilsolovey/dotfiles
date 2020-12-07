@@ -1,0 +1,43 @@
+URxvt.font: xft:UbuntuMono-Regular:size=14,style=regular, xft:Iosevka:size=14,style=regular
+URxvt.boldFont: xft:UbuntuMono:size=14,style=bold, xft:Iosevka:size=14,style=bold
+URxvt.italicFont: xft:UbuntuMono:size=14,style=italic, xft:Iosevka:size=14,style=italic
+URxvt.boldItalicFont: xft:UbuntuMono:size=14,style=bold, xft:Iosevka:size=14,style=bold
+Xft.dpi: 96 
+
+URxvt.scrollBar: false
+
+URxvt.perl-lib: /home/operator/.urxvt/ext/perl
+
+
+URxvt.perl-ext-common: clipboard,default
+
+
+URxvt.keysym.Mod4-c: perl:clipboard:copy
+URxvt.keysym.Mod4-v: perl:clipboard:paste
+URxvt.clipboard.copycmd:  clipboard-copy
+URxvt.clipboard.pastecmd: xsel --output --clipboard
+
+URxvt*color0: #424242
+URxvt*color1: #ba3b38
+URxvt*color2: #5d865f
+URxvt*color3: #a8814a
+URxvt*color4: #88afd4
+URxvt*color5: #cc5985
+URxvt*color6: #376360
+URxvt*color7: #d0cfca
+URxvt*color8: #5d5d5d
+URxvt*color9: #e9605f
+URxvt*color10: #79ab87
+URxvt*color11: #f7d58a
+URxvt*color12: #98c6ef
+URxvt*color13: #e499b2
+URxvt*color14: #579e9a
+URxvt*color15: #f4f2eb
+URxvt*background: #1c1c1c
+URxvt*foreground: #ffffff
+URxvt*cursorColor: #ffffff
+
+rofi.color-normal: #1c1c1c, #d8d8d8, #1c1c1c, #af8700, #ffffff
+rofi.color-active: #1c1c1c, #d8d8d8, #1c1c1c, #af8700, #ffffff
+rofi.color-urgent: #1c1c1c, #d8d8d8, #1c1c1c, #af8700, #ffffff
+rofi.color-window: #1c1c1c, #d8d8d8

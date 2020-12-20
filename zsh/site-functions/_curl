@@ -1,0 +1,25 @@
+#compdef curl
+
+# curl zsh completion
+
+local curcontext="$curcontext" state state_descr line
+typeset -A opt_args
+
+local rc=1
+
+_arguments -C -S \
+  {-T,--upload-file}'[Transfer local FILE to destination]':'<file>':_files \
+  {-O,--remote-name}'[Write output to a file named as the remote file]' \
+  {-i,--include}'[Include protocol response headers in the output]' \
+  {-o,--output}'[Write to file instead of stdout]':'<file>':_files \
+  {-f,--fail}'[Fail silently (no output at all) on HTTP errors]' \
+  {-A,--user-agent}'[Send User-Agent <name> to server]':'<name>' \
+  {-u,--user}'[Server user and password]':'<user\:password>' \
+  {-v,--verbose}'[Make the operation more talkative]' \
+  {-h,--help}'[Get help for commands]':'<category>' \
+  {-V,--version}'[Show version number and quit]' \
+  {-d,--data}'[HTTP POST data]':'<data>' \
+  {-s,--silent}'[Silent mode]' \
+  '*:URL:_urls' && rc=0
+
+return rc

@@ -1,0 +1,7 @@
+#compdef nordvpn
+_nordvpn_auto_complete() {
+    local -a opts
+    opts=("${(@f)$(${words[@]:0:#words[@]-1} --complete)}")
+    _describe 'values' opts
+    return
+}

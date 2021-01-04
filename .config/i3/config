@@ -35,18 +35,21 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvt -e tmux
 bindsym $mod+s exec deepin-screenshot --no-notification
 bindsym $mod+t exec translator
-bindsym $mod+F1 exec urxvt -e "ranger"
+bindsym $mod+F9 exec urxvt -e "ranger"
 bindsym $mod+w exec ~/go/bin/sensors-info-linux
 bindsym $mod+F2 exec ~/go/bin/decrease-volume
 bindsym $mod+F3 exec ~/go/bin/increase-volume
-bindsym $mod+F4 exec urxvt -e "vim"
+bindsym $mod+F8 exec urxvt -e "vim"
 bindsym $mod+F5 exec code
-bindsym $mod+F6 exec firefox
-bindsym $mod+F7 exec nemo
-bindsym $mod+F8 exec simplescreenrecorder
-bindsym $mod+F9 exec nordvpn connect
-bindsym $mod+Ctrl+F9 exec nordvpn disconnect
+bindsym $mod+F1 exec firefox
+bindsym $mod+F4 exec nemo
+bindsym $mod+F7 exec simplescreenrecorder
+bindsym $mod+Ctrl+F7 exec gimp
+bindsym $mod+F6 exec nordvpn connect
+bindsym $mod+Ctrl+F6 exec nordvpn disconnect
 bindsym $mod+F10 exec libreoffice
+bindsym $mod+Ctrl+F10 exec masterpdfeditor4
+
 
 bindsym $mod+Left exec  xbacklight -set 50
 bindsym $mod+Right exec  xbacklight -set 100

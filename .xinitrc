@@ -7,7 +7,7 @@ sudo systemctl import-environment DISPLAY
 
 autorandr --change
 xkbcomp -w 0 -I$HOME/.xkb -R$HOME/.xkb $HOME/.xkbrc $DISPLAY &
-sudo shift-shift -first CAPSLOCK -second RIGHTSHIFT -match '(?i)razer|keyboard|storm|microelectronics|COMPANY' &
+sudo shift-shift -first CAPSLOCK -second RIGHTSHIFT -match '(?i)razer|keyboard|storm|microelectronics|COMPANY|Apple|Keychron K2' &
 xbindkeys &
 low-battery-notify &
 xset r rate 150 170 &

@@ -41,7 +41,7 @@ bindsym $mod+F2 exec ~/go/bin/decrease-volume
 bindsym $mod+F3 exec ~/go/bin/increase-volume
 bindsym $mod+F8 exec urxvt -e "vim"
 bindsym $mod+F5 exec code
-bindsym $mod+F1 exec firefox
+bindsym $mod+F1 exec keyboard_setup.sh
 bindsym $mod+F4 exec nemo
 bindsym $mod+F7 exec simplescreenrecorder
 bindsym $mod+Ctrl+F7 exec gimp

@@ -8,60 +8,71 @@ SetWorkingDir %A_ScriptDir%
 
 SetCapslockState, AlwaysOff
 
-CapsLock & k:: 
-SendInput {up} 
-return 
+CapsLock & k::
+SendInput {up}
+return
 
-CapsLock & j:: 
-SendInput {down} 
-return 
+CapsLock & j::
+SendInput {down}
+return
 
-CapsLock & h:: 
-SendInput {left} 
-return 
+CapsLock & h::
+SendInput {left}
+return
 
-CapsLock & l:: 
-SendInput {right} 
-return 
-
-
+CapsLock & l::
+SendInput {right}
+return
 
 
-CapsLock & o:: 
-SendInput {PgDn} 
-return 
 
-CapsLock & i:: 
-SendInput {PgUp} 
-return 
 
-CapsLock & p:: 
-SendInput {End} 
-return 
+CapsLock & o::
+SendInput {PgDn}
+return
 
-CapsLock & u:: 
-SendInput {Home} 
-return 
+CapsLock & i::
+SendInput {PgUp}
+return
+
+CapsLock & p::
+SendInput {End}
+return
+
+CapsLock & u::
+SendInput {Home}
+return
 
 
 
 CapsLock & [::
 SendInput {BackSpace}
-return 
+return
 
 CapsLock & ]::
 SendInput {Del}
-return 
+return
 
 #If GetKeyState("Shift","h")
-  CapsLock & h:: Send +{left}
-  CapsLock & l:: Send +{right}
-  CapsLock & k:: Send +{up}
-  CapsLock & j:: Send +{down}
-  CapsLock & o:: Send +{PgDn}
-  CapsLock & i:: Send +{PgUp}
-  CapsLock & p:: Send +{End}
-  CapsLock & u:: Send +{Home}
+  CapsLock & h::left
+  CapsLock & l::right
+  CapsLock & k::up
+  CapsLock & j::down
+  CapsLock & o::PgDn
+  CapsLock & i::PgUp
+  CapsLock & p::End
+  CapsLock & u::Home
+return
+
+#If GetKeyState("LCtrl","h")
+  CapsLock & h::left
+  CapsLock & l::right
+  CapsLock & k::up
+  CapsLock & j::down
+  CapsLock & o::PgDn
+  CapsLock & i::PgUp
+  CapsLock & p::End
+  CapsLock & u::Home
 return
 
 #Esc:: ; switch to next desktop with Windows key + Left Alt key

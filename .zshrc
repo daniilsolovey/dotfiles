@@ -25,7 +25,7 @@ alias gcl='git clone'
 # reload zsh
 alias zr='source ~/.zshrc && print "zsh config has been reloaded"'
 # golang
-alias gt.='go test ./...' 
+alias gt.='go test ./...'
 alias gtr='go test -run'
 alias gob='go build'
 alias goi='go install'
@@ -34,13 +34,14 @@ alias pms='sudo pacman -S'
 alias ys='yay -S'
 alias wh='which'
 alias uz=':unzip'
-alias pk='kill -9'
+alias pk='sudo kill -9'
 # docker
 alias ds='sudo systemctl start docker'
 alias ds!='sudo systemctl stop docker'
 alias dsc='docker stop'
 alias drm='docker rm -f'
 alias dils='docker image ls'
+alias dilsnonerm='docker rmi $(docker images -f "dangling=true" -q)'
 alias din='docker inspect'
 alias dps='docker ps'
 alias dex='docker exec -it'
@@ -62,9 +63,9 @@ alias t='task'
 
 
 
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
-fi
+# if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+#   exec startx
+# fi
 
 if [ ! -d ~/.zgen ]; then
 	git clone https://github.com/tarjoilija/zgen ~/.zgen

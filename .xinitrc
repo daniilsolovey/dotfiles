@@ -10,7 +10,6 @@ sudo shift-shift -first CAPSLOCK -second RIGHTSHIFT -match '(?i)razer|keyboard|s
 xbindkeys &
 low-battery-notify &
 xset r rate 150 170 &
-xinput set-prop 16 297 0.45 &
 
 keynav &
 

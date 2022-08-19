@@ -5,16 +5,19 @@ export PATH="$HOME/bin:$GOPATH/bin:/opt/atlassian/plugin-sdk/bin:$HOME/.local/bi
 systemctl --user import-environment DISPLAY
 sudo systemctl import-environment DISPLAY
 
-autorandr --change
 xkbcomp -w 0 -I$HOME/.xkb -R$HOME/.xkb $HOME/.xkbrc $DISPLAY &
 sudo shift-shift -first CAPSLOCK -second RIGHTSHIFT -match '(?i)razer|keyboard|storm|microelectronics|COMPANY|Apple|Keychron K2' &
 xbindkeys &
 low-battery-notify &
 xset r rate 150 170 &
+xinput set-prop 16 297 0.45 &
 
 keynav &
 
 sudo ntpdate pool.ntp.org &
-.screenlayout/laptopAndHDMI.sh
+
+xset -dpms; xset s off; xset s noexpose; xset s noblank
+
+.screenlayout/hdmi_and_display_port.sh &
 
 exec i3

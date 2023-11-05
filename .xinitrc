@@ -2,6 +2,7 @@ xrdb -load .Xresources
 export GOPATH="$HOME/go"
 export PATH="$HOME/bin:$GOPATH/bin:/opt/atlassian/plugin-sdk/bin:$HOME/.local/bin:$HOME/deadfiles/bin:$PATH:$HOME/Scripts"
 
+
 systemctl --user import-environment DISPLAY
 sudo systemctl import-environment DISPLAY
 
@@ -10,6 +11,8 @@ sudo shift-shift -first CAPSLOCK -second RIGHTSHIFT -match '(?i)razer|keyboard|s
 xbindkeys &
 low-battery-notify &
 xset r rate 150 170 &
+xinput set-prop 16 297 0.45 &
+
 
 keynav &
 
@@ -18,5 +21,6 @@ sudo ntpdate pool.ntp.org &
 xset -dpms; xset s off; xset s noexpose; xset s noblank
 
 .screenlayout/hdmi_and_display_port.sh &
+
 
 exec i3

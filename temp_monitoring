@@ -1,3 +1,0 @@
-#!/bin/bash
-
-while true; do sensors | awk '/Core /{print $3}' | head -n1; sleep 1; done

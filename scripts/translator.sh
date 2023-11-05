@@ -1,0 +1,100 @@
+#!/bin/bash
+
+set -euo pipefail
+
+ANKI_DECK=${ANKI_DECK:-desktop}
+
+HISTORY=~/.engrus_history
+
+:main() {
+    if (( $# )); then
+        local input=$*
+    else
+        local input=$(modal -input /dev/null -no-fixed-num-lines -sync <&-)
+    fi
+
+    if [[ "$input" == "" ]]; then
+        exit 1
+    fi
+
+    local input_lang="en-ru"
+    if ! grep -qiE '[a-z]' <<< "$input"; then
+        input_lang="ru-en"
+    fi
+
+    if ! :translate "$input" "$input_lang"; then
+        return 1
+    fi | while read result; do
+        if [[ ! "$result" ]]; then
+            continue
+        fi
+
+        :history:add "$input" "$result"
+
+        ankictl -A ${ANKI_DECK} <<< "${input}"$'\t'"${result}"
+    done
+}
+
+:show-no-translation() {
+    local input="$1"
+    modal \
+        -color-window "#ff0000, #ff0000" \
+        -color-normal "#ff0000, #ffffff, #ff0000, #ff0000" \
+        -e "$input: no translation found"
+}
+
+:translate() {
+    local input="$1"
+    local input_lang=$2
+
+    local out=$(transline -d -o json -l "$input_lang" "$input")
+    if [[ ! "$out" ]]; then
+        :show-no-translation "$input"
+        return 1
+    fi
+
+    local transcription=$(jq -r '.transcript' 2>/dev/null <<< "$out")
+    if [[ ! "$transcription" ]]; then
+        local result=$(jq -r . <<< "$out")
+        if [[ ! "$result" ]]; then
+            return 1
+        fi
+
+        modal-message "$input"$'\n\n› '"$result"
+
+        printf '%s\n' "$result"
+
+        return 0
+    fi
+
+    local length=$(jq -r '.meanings | length' <<< "$out")
+    if (( "$length" > 7 )); then
+        length=7
+    fi
+
+    local meanings=$(jq <<< "$out" \
+        '.meanings | .[] | {item: .translation, title: .references | join(", ")}' \
+            | jq -s . \
+            | tee /dev/stderr)
+
+    local result=$(modal-template <<< "$meanings" \
+        --args "-lines $length" \
+        --no-description \
+        --message "<span font=\"Iosevka 10\">$input &#8212; [$transcription]</span>")
+
+    if [[ ! "$result" ]]; then
+        return 1
+    fi
+
+    printf '%s\n' "$result"
+}
+
+:history:add() {
+    local input=$1
+    local result=$2
+
+    printf '%s\t%s\n' "$input" "$result" >> $HISTORY
+
+}
+
+:main "$@"

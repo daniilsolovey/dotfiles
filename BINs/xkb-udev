@@ -1,0 +1,13 @@
+#!/bin/bash
+set -x
+exec >/tmp/log 2>&1
+sleep 1
+env > /tmp/env
+
+export DISPLAY=:0
+dir=$(dirname $0)/..
+xkbcomp -w 0 -I$dir/.xkb -R$dir/.xkb $dir/.xkbrc $DISPLAY &
+sudo -u operator /usr/bin/xbindkeys &
+sudo $dir/go/bin/shift-shift -first CAPSLOCK -second RIGHTSHIFT -match '(?i)razer|keyboard|storm|microelectronics|COMPANY|Apple|Keychron K2' &
+
+xset r rate 150 170 &

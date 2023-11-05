@@ -34,7 +34,8 @@ alias pms='sudo pacman -S'
 alias ys='yay -S'
 alias wh='which'
 alias uz=':unzip'
-alias pk='sudo kill -9'
+alias pk='pkill -9 -f'
+alias sudopk='sudo kill -9'
 # docker
 alias ds='sudo systemctl start docker'
 alias ds!='sudo systemctl stop docker'
@@ -59,8 +60,19 @@ alias scd='sudo systemctl disable'
 alias scu='sudo systemctl status'
 alias scl='sudo systemctl list-units'
 alias t='task'
+#vscode
+alias sudocode='sudo code --user-data-dir='.' --no-sandbox'
 
 
+HISTSIZE=1000000
+SAVEHIST=1000000
+HISTFILE=~/.zsh_history
+
+bindkey -v
+bindkey "^R" history-incremental-search-backward
+
+autoload -U compinit
+compinit
 
 
 # if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
@@ -162,3 +174,4 @@ bindkey -v '^N' :favor
     local name=$(sed -r 's/\.(zip|jar)$//' <<< "$1")
     unzip $1 -d "$name"
 }
+

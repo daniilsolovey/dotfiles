@@ -33,7 +33,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt -e tmux
-bindsym $mod+s exec deepin-screenshot --no-notification
+bindsym $mod+s exec deepin-screen-recorder --no-notification
 bindsym $mod+t exec translator
 bindsym $mod+w exec ~/go/bin/sensors-info-linux
 bindsym $mod+F1 exec keyboard_setup.sh

@@ -1,3 +1,0 @@
-#!/bin/bash
-
-exec rofi -width 300 -font "Monaco Bold 12" -e "$@"

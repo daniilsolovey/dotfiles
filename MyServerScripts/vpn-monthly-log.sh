@@ -28,8 +28,6 @@ DATE=$(date +%Y-%m)
 TS=$(date '+%Y-%m-%d %H:%M:%S')
 
 mkdir -p "$LOGDIR"
-
-# один общий лог на месяц
 OUT="$LOGDIR/${DATE}.log"
 
 while IFS=',' read -r CN IP4 IP6; do
@@ -37,15 +35,14 @@ while IFS=',' read -r CN IP4 IP6; do
 
   CHAIN="OVPN_$(echo "$CN" | tr '-' '_' )"
 
-  # читаем байты для этого клиента
-  BYTES=$(iptables -L "$CHAIN" -v -n 2>/dev/null | awk 'NR==3 {print $2}')
-  # если цепочки нет или нет счётчиков - пропустим
+  # ВАЖНО: -x → точные байты, без K/M/G
+  BYTES=$(iptables -L "$CHAIN" -v -n -x 2>/dev/null | awk 'NR==3 {print $2}')
   [ -z "$BYTES" ] && continue
 
   MB=$(echo "$BYTES / 1024 / 1024" | bc -l)
 
   printf "%s CN=%s bytes=%s MB=%.2f\n" "$TS" "$CN" "$BYTES" "$MB" >> "$OUT"
 
-  # обнуляем счётчик только этой цепочки
+  # обнуляем счётчики только для этой цепочки
   iptables -Z "$CHAIN" || true
 done < "$IPP_FILE"

@@ -2,6 +2,7 @@
 set -euo pipefail
 
 IPP_FILE="/etc/openvpn/ipp.txt"
+MAX_CHAIN_LEN=27
 # скрипт для инициализации iptables для каждого пользователя в отдельной цепочке используя iptables
 # для одного пользователя:
 #CHAIN="OVPN_UserName"
@@ -17,6 +18,11 @@ while IFS=',' read -r CN IP4 IP6; do
 
   # нормализуем имя цепочки: OVPN_<CN>, заменяя '-' на '_'
   CHAIN="OVPN_$(echo "$CN" | tr '-' '_' )"
+
+    # ➜ проверка длины
+  if [ ${#CHAIN} -gt $MAX_CHAIN_LEN ]; then
+    CHAIN="${CHAIN:0:$MAX_CHAIN_LEN}"
+  fi
 
   echo "==> Настраиваю клиента $CN (цепочка $CHAIN, IP4=$IP4, IP6=$IP6)"
 

@@ -1,0 +1,7 @@
+identifier: default+ub:default
+candidate:
+    normal: 232:default
+    selected: 230+b:232
+fog:
+    text: 250:default
+    background: 250:default

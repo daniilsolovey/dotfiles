@@ -33,18 +33,25 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt -e tmux
-bindsym $mod+s exec deepin-screen-recorder --no-notification
+# bindsym $mod+Return exec urxvt
+#bindsym $mod+s exec deepin-screen-recorder --no-notification
+bindsym $mod+s exec /home/operator/Scripts/maim-screenshot-area.sh
 bindsym $mod+t exec translator
 bindsym $mod+w exec ~/go/bin/sensors-info-linux
 bindsym $mod+F1 exec keyboard_setup.sh
-bindsym $mod+F2 exec ~/go/bin/decrease-volume
-bindsym $mod+F3 exec ~/go/bin/increase-volume
+# bindsym $mod+F2 exec ~/go/bin/decrease-volume
+# bindsym $mod+F3 exec ~/go/bin/increase-volume
+
+bindsym $mod+F2 exec --no-startup-id ~/Scripts/volume_control.sh down
+bindsym $mod+F3 exec --no-startup-id ~/Scripts/volume_control.sh up
+
 bindsym $mod+F5 exec xbacklight -dec 10
 bindsym $mod+F6 exec xbacklight -inc 10
 bindsym $mod+F7 exec ~/.screenlayout/laptop_only.sh
 bindsym $mod+Ctrl+F7 exec ~/.screenlayout/hdmi_and_display_port.sh
 bindsym $mod+F8 exec nmcli radio wifi on
 bindsym $mod+F9 exec nmcli radio wifi off
+
 
 
 # kill focused window
@@ -80,6 +87,12 @@ bindsym $mod+b split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
+
+# tabbed layout
+bindsym $mod+y layout tabbed
+
+# back to normal split layout
+# bindsym $mod+u layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle

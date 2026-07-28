@@ -175,3 +175,4 @@ bindkey -v '^N' :favor
     unzip $1 -d "$name"
 }
 
+eval "$(zoxide init zsh)"

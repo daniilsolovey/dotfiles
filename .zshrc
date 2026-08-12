@@ -74,6 +74,9 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_REDUCE_BLANKS
 
+eval "$(dircolors -b)"
+alias ls='ls --color=auto'
+
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 

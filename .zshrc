@@ -64,9 +64,15 @@ alias t='task'
 alias sudocode='sudo code --user-data-dir='.' --no-sandbox'
 
 
+
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
+
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_REDUCE_BLANKS
 
 bindkey -v
 bindkey "^R" history-incremental-search-backward

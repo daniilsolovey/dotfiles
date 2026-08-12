@@ -9,13 +9,15 @@ URxvt.scrollBar: false
 URxvt.perl-lib: /home/operator/.urxvt/ext/perl
 
 
-URxvt.perl-ext-common: clipboard,default
+!URxvt.perl-ext-common: clipboard,default
+!URxvt.keysym.Mod4-c: perl:clipboard:copy
+!URxvt.keysym.Mod4-v: perl:clipboard:paste
+!URxvt.clipboard.copycmd:  clipboard-copy
+!URxvt.clipboard.pastecmd: xsel --output --clipboard
 
-
-URxvt.keysym.Mod4-c: perl:clipboard:copy
-URxvt.keysym.Mod4-v: perl:clipboard:paste
-URxvt.clipboard.copycmd:  clipboard-copy
-URxvt.clipboard.pastecmd: xsel --output --clipboard
+URxvt.perl-ext-common: default
+URxvt.keysym.Mod4-c: eval:selection_to_clipboard
+URxvt.keysym.Mod4-v: eval:paste_clipboard
 
 URxvt*color0: #424242
 URxvt*color1: #ba3b38

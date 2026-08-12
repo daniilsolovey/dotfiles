@@ -45,8 +45,8 @@ bindsym $mod+F1 exec keyboard_setup.sh
 bindsym $mod+F2 exec --no-startup-id ~/Scripts/volume_control.sh down
 bindsym $mod+F3 exec --no-startup-id ~/Scripts/volume_control.sh up
 
-bindsym $mod+F5 exec xbacklight -dec 10
-bindsym $mod+F6 exec xbacklight -inc 10
+bindsym $mod+F5 exec brightnessctl set 10%-
+bindsym $mod+F6 exec brightnessctl set +10%
 bindsym $mod+F7 exec ~/.screenlayout/laptop_only.sh
 bindsym $mod+Ctrl+F7 exec ~/.screenlayout/hdmi_and_display_port.sh
 bindsym $mod+F8 exec nmcli radio wifi on
@@ -65,7 +65,10 @@ bindsym $mod+F11 exec dmenu_run
 # bindsym $mod+s exec --no-startup-id i3-dmenu-desktop
 
 #open command line in center of screen
-bindsym $mod+d exec modal-run
+#bindsym $mod+d exec modal-run
+bindsym $mod+d exec --no-startup-id rofi -show run
+
+
 
 bindsym Ctrl+Home  focus left
 bindsym Ctrl+Next  focus down

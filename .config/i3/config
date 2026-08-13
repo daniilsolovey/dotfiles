@@ -54,6 +54,7 @@ bindsym $mod+F7 exec ~/.screenlayout/laptop_only.sh
 bindsym $mod+Ctrl+F7 exec ~/.screenlayout/hdmi_and_display_port.sh
 bindsym $mod+F8 exec nmcli radio wifi off
 bindsym $mod+F9 exec nmcli radio wifi on
+bindsym $mod+F12 exec slock
 
 
 
@@ -68,8 +69,9 @@ bindsym $mod+F11 exec dmenu_run
 # bindsym $mod+s exec --no-startup-id i3-dmenu-desktop
 
 #open command line in center of screen
-#bindsym $mod+d exec modal-run
 bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+v exec --no-startup-id rofi -show window
+
 
 
 

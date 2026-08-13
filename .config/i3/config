@@ -52,8 +52,8 @@ bindsym $mod+F5 exec brightnessctl set 10%-
 bindsym $mod+F6 exec brightnessctl set +10%
 bindsym $mod+F7 exec ~/.screenlayout/laptop_only.sh
 bindsym $mod+Ctrl+F7 exec ~/.screenlayout/hdmi_and_display_port.sh
-bindsym $mod+F8 exec nmcli radio wifi on
-bindsym $mod+F9 exec nmcli radio wifi off
+bindsym $mod+F8 exec nmcli radio wifi off
+bindsym $mod+F9 exec nmcli radio wifi on
 
 
 

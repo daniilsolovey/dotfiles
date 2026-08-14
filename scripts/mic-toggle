@@ -3,7 +3,7 @@
 wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 if wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED; then
-    notify-send -u normal -t 1500 "Microphone" "Muted"
+    notify-send -u normal -t 1500 "Microphone" "Microphone Muted"
 else
-    notify-send -u normal -t 1500 "Microphone" "Enabled"
+    notify-send -u normal -t 1500 "Microphone" "Microphone Enabled"
 fi

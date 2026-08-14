@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+case "$1" in
+    up)
+        wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 10%+
+        ;;
+    down)
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
+        ;;
+    mute)
+        wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+        ;;
+    *)
+        exit 1
+        ;;
+esac
+
+status=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+
+if grep -q MUTED <<< "$status"; then
+    notify-send \
+        -h string:x-dunst-stack-tag:volume \
+        -t 1000 \
+        "Volume" \
+        "Muted"
+    exit 0
+fi
+
+volume=$(awk '{printf "%.0f", $2 * 100}' <<< "$status")
+
+notify-send \
+    -h string:x-dunst-stack-tag:volume \
+    -t 1000 \
+    "Volume" \
+    "Volume: ${volume}%"

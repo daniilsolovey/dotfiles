@@ -38,22 +38,32 @@ bindsym $mod+Return exec urxvt -e tmux
 bindsym $mod+s exec /home/operator/Scripts/maim-screenshot-area.sh
 bindsym $mod+t exec translator
 bindsym $mod+w exec ~/go/bin/sensors-info-linux
-bindsym $mod+F1 exec keyboard_setup.sh
-# bindsym $mod+F2 exec ~/go/bin/decrease-volume
-# bindsym $mod+F3 exec ~/go/bin/increase-volume
 
 
-bindsym $mod+F2 exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym $mod+F3 exec --no-startup-id wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+# volume control
+bindsym $mod+F1 exec --no-startup-id ~/Scripts/volume-control-audio-sink mute
+bindsym $mod+F2 exec --no-startup-id ~/Scripts/volume-control-audio-sink down
+bindsym $mod+F3 exec --no-startup-id ~/Scripts/volume-control-audio-sink up
 
+#keyboard setup
+bindsym $mod+F10 exec keyboard_setup.sh
+
+# microphone
 bindsym Mod4+F4 exec --no-startup-id ~/Scripts/mic-toggle
 
+# brightness
 bindsym $mod+F5 exec brightnessctl set 10%-
 bindsym $mod+F6 exec brightnessctl set +10%
+
+# external displays
 bindsym $mod+F7 exec ~/.screenlayout/laptop_only.sh
 bindsym $mod+Ctrl+F7 exec ~/.screenlayout/hdmi_and_display_port.sh
+
+#wifi
 bindsym $mod+F8 exec nmcli radio wifi off
 bindsym $mod+F9 exec nmcli radio wifi on
+
+#lock screen
 bindsym $mod+F12 exec slock
 
 
@@ -70,7 +80,8 @@ bindsym $mod+F11 exec dmenu_run
 
 #open command line in center of screen
 bindsym $mod+d exec --no-startup-id rofi -show run
-bindsym $mod+v exec --no-startup-id rofi -show window
+bindsym $mod+a exec --no-startup-id rofi -show window
+
 
 
 
@@ -109,7 +120,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child

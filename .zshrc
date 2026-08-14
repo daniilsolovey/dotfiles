@@ -62,7 +62,8 @@ alias scl='sudo systemctl list-units'
 alias t='task'
 #vscode
 alias sudocode='sudo code --user-data-dir='.' --no-sandbox'
-
+#cursor
+alias cursor='cursor --classic'
 
 
 HISTSIZE=1000000
@@ -94,7 +95,7 @@ fi
 
 
 source ~/.zgen/zgen.zsh
-
+source <(fzf --zsh)
 
 if ! zgen saved; then
 	zgen load seletskiy/zsh-prompt-lambda17

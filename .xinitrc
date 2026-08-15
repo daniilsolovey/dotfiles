@@ -36,4 +36,6 @@ xinput set-prop \
 low-battery-notify &
 keynav &
 
+"$HOME/Scripts/monitor-hotplug.sh" &
+
 exec i3

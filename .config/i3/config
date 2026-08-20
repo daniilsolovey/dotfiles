@@ -83,6 +83,10 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+a exec --no-startup-id rofi -show window
 
 
+# Быстрый выпадающий терминал
+for_window [instance="dropdown"] floating enable, border pixel 1, resize set 1200 500, move position center, move scratchpad
+bindsym $mod+t exec --no-startup-id ~/Scripts/dropdown-terminal.sh
+
 
 
 

@@ -36,7 +36,6 @@ bindsym $mod+Return exec urxvt -e tmux
 # bindsym $mod+Return exec urxvt
 #bindsym $mod+s exec deepin-screen-recorder --no-notification
 bindsym $mod+s exec /home/operator/Scripts/maim-screenshot-area.sh
-bindsym $mod+t exec translator
 bindsym $mod+w exec ~/go/bin/sensors-info-linux
 
 

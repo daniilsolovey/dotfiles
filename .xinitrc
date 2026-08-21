@@ -23,7 +23,7 @@ shift-shift \
 xbindkeys &
 
 xset b off &
-xset r rate 170 170 &
+xset r rate 200 200 &
 
 # Автоматически переустанавливать раскладку
 # при подключении Bluetooth/USB клавиатуры

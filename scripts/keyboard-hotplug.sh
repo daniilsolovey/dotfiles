@@ -7,7 +7,7 @@ apply_keyboard() {
         "$HOME/.xkbrc" \
         "$DISPLAY"
 
-    xset r rate 150 170
+    xset r rate 170 170
 }
 
 xinput test-xi2 --root |

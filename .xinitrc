@@ -25,6 +25,10 @@ xbindkeys &
 xset b off &
 xset r rate 200 200 &
 
+# выкл автоотключение мониторов(энергосбережение)
+xset s off
+xset -dpms
+
 # Автоматически переустанавливать раскладку
 # при подключении Bluetooth/USB клавиатуры
 "$HOME/Scripts/keyboard-hotplug.sh" &

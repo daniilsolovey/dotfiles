@@ -7,6 +7,8 @@ if [ "$USB_C_STATUS" = "connected" ] && [ "$HDMI_STATUS" = "connected" ]; then
     "$HOME/.screenlayout/usb-c-hdmi.sh"
 elif [ "$USB_C_STATUS" = "connected" ]; then
     "$HOME/.screenlayout/usb-c.sh"
+elif [ "$HDMI_STATUS" = "connected" ]; then
+    "$HOME/.screenlayout/hdmi.sh"
 else
     "$HOME/.screenlayout/laptop.sh"
 fi

@@ -14,8 +14,10 @@ URxvt.perl-lib: /home/operator/.urxvt/ext/perl
 !URxvt.keysym.Mod4-v: perl:clipboard:paste
 !URxvt.clipboard.copycmd:  clipboard-copy
 !URxvt.clipboard.pastecmd: xsel --output --clipboard
+!URxvt.perl-ext-common: default
 
-URxvt.perl-ext-common: default
+URxvt.perl-ext-common: default,-confirm-paste
+
 URxvt.keysym.Mod4-c: eval:selection_to_clipboard
 URxvt.keysym.Mod4-v: eval:paste_clipboard
 

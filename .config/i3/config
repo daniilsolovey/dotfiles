@@ -44,19 +44,12 @@ bindsym $mod+F1 exec --no-startup-id ~/Scripts/volume-control-audio-sink mute
 bindsym $mod+F2 exec --no-startup-id ~/Scripts/volume-control-audio-sink down
 bindsym $mod+F3 exec --no-startup-id ~/Scripts/volume-control-audio-sink up
 
-#keyboard setup
-bindsym $mod+F10 exec keyboard_setup.sh
-
 # microphone
 bindsym Mod4+F4 exec --no-startup-id ~/Scripts/mic-toggle
 
 # brightness
 bindsym $mod+F5 exec brightnessctl set 10%-
 bindsym $mod+F6 exec brightnessctl set +10%
-
-# external displays
-bindsym $mod+F7 exec ~/.screenlayout/laptop_only.sh
-bindsym $mod+Ctrl+F7 exec ~/.screenlayout/hdmi_and_display_port.sh
 
 #wifi
 bindsym $mod+F8 exec nmcli radio wifi off

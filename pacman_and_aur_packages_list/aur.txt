@@ -1,0 +1,7 @@
+amneziavpn-bin
+claude-code
+cursor-bin
+downgrade
+teams-for-linux
+yay
+yay-debug

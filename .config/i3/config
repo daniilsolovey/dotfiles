@@ -213,7 +213,7 @@ exec_always --no-startup-id picom -b
 # Режим управления мышкой с клавиатуры #########################################
 set $mode_mouse Mouse: hjkl move, q/w/e clicks, Esc exit
 
-bindsym $mod+g mode "$mode_mouse"
+bindsym $mod+z mode "$mode_mouse"
 
 mode "$mode_mouse" {
     # движение курсора

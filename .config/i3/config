@@ -76,9 +76,16 @@ bindsym $mod+a exec --no-startup-id rofi -show window
 
 
 # Быстрый выпадающий терминал
-for_window [instance="dropdown"] floating enable, border pixel 1, resize set 1200 500, move position center, move scratchpad
+for_window [instance="dropdown"] floating enable, border pixel 1, resize set 1200 500, move position center
 bindsym $mod+t exec --no-startup-id ~/Scripts/dropdown-terminal.sh
 
+mode "dropdown-terminal" {
+    bindsym Escape exec --no-startup-id i3-msg '[instance="dropdown"] move scratchpad', mode "default"
+
+    bindcode F24 exec --no-startup-id i3-msg '[instance="dropdown"] move scratchpad', mode "default"
+
+    bindsym $mod+t exec --no-startup-id i3-msg '[instance="dropdown"] move scratchpad', mode "default"
+}
 
 
 

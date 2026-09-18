@@ -12,6 +12,7 @@ l sh "xdotool mousemove_relative -- 20 0"
 
 # клики
 q click 1
+a sh "/home/operator/Scripts/mouse-drag-toggle.sh"
 w click 2
 e click 3
 
@@ -21,4 +22,4 @@ f click 5
 
 # выход
 Escape end
-F24 end
+F24 sh "xdotool mouseup 1; rm -f ${XDG_RUNTIME_DIR}/keyboard-mouse-drag",end

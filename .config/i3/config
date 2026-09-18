@@ -209,6 +209,10 @@ exec_always --no-startup-id xinput set-prop "ELAN067B:00 04F3:31F8 Touchpad" "li
 # picom
 exec_always --no-startup-id picom -b
 
+# keynav
+exec_always --no-startup-id sh -c 'pgrep -x keynav >/dev/null || /usr/bin/keynav'
+
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

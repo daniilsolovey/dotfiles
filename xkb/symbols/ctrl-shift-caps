@@ -1,6 +1,6 @@
 partial modifier_keys
 xkb_symbols "swap_ctrl_shift_caps" {
     replace key <LCTL> { [ Shift_L ] };
-    replace key <LFSH> { [ Escape ] };
+    replace key <LFSH> { [ Escape, F24 ] };
     replace key <CAPS> { [ Control_L ] };
 };

@@ -210,29 +210,6 @@ exec_always --no-startup-id xinput set-prop "ELAN067B:00 04F3:31F8 Touchpad" "li
 exec_always --no-startup-id picom -b
 
 
-# Режим управления мышкой с клавиатуры #########################################
-set $mode_mouse Mouse: hjkl move, q/w/e clicks, Esc exit
-
-bindsym $mod+z mode "$mode_mouse"
-
-mode "$mode_mouse" {
-    # движение курсора
-    bindsym h exec --no-startup-id xdotool mousemove_relative -- -20 0
-    bindsym j exec --no-startup-id xdotool mousemove_relative -- 0 20
-    bindsym k exec --no-startup-id xdotool mousemove_relative -- 0 -20
-    bindsym l exec --no-startup-id xdotool mousemove_relative -- 20 0
-
-    # клики
-    bindsym q exec --no-startup-id xdotool click 1
-    bindsym w exec --no-startup-id xdotool click 2
-    bindsym e exec --no-startup-id xdotool click 3
-
-    # выход
-    bindsym Escape mode "default"
-}
-################################################################################
-
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # bar {

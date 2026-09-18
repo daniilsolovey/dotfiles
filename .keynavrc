@@ -1,50 +1,24 @@
 clear
+daemonize
 
-super+semicolon start,grid 4x4
+# Super+Z -> включить режим мышки
+super+z start
 
-1 cell-select 1,warp
-q cell-select 2,warp
-a cell-select 3,warp
-z cell-select 4,warp
-2 cell-select 5,warp
-w cell-select 6,warp
-s cell-select 7,warp
-x cell-select 8,warp
-3 cell-select 9,warp
-e cell-select 10,warp
-d cell-select 11,warp
-c cell-select 12,warp
-4 cell-select 13,warp
-r cell-select 14,warp
-f cell-select 15,warp
-v cell-select 16,warp
+# движение — через xdotool, как в старом варианте
+h sh "xdotool mousemove_relative -- -20 0"
+j sh "xdotool mousemove_relative -- 0 20"
+k sh "xdotool mousemove_relative -- 0 -20"
+l sh "xdotool mousemove_relative -- 20 0"
 
-h move-left,warp
-j move-down,warp
-k move-up,warp
-l move-right,warp
+# клики
+q click 1
+w click 2
+e click 3
 
-shift+h cut-left,warp
-shift+j cut-down,warp
-shift+k cut-up,warp
-shift+l cut-right,warp
+# скролл
+r click 4
+f click 5
 
-space warp,click 1
-g warp,click 2
-b warp,click 3
-
-grave shell 'notify deprecated'
-i grid 1x1,cursorzoom 10 10
-
-shift+space warp,drag 1
-shift+minus warp,drag 3
-
-BackSpace history-back
-
-o click 2
-
-n warp,click 5
-m warp,click 4
-
-semicolon end
-Return end
+# выход
+Escape end
+F24 end

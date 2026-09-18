@@ -13,6 +13,7 @@ l sh "xdotool mousemove_relative -- 20 0"
 # клики
 q click 1
 a sh "/home/operator/Scripts/mouse-drag-toggle.sh"
+s sh "/home/operator/Scripts/screenshot-keyboard-point.sh"
 w click 2
 e click 3
 

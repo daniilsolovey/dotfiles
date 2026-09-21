@@ -5,10 +5,10 @@ daemonize
 super+z start
 
 # движение — через xdotool, как в старом варианте
-h sh "xdotool mousemove_relative -- -20 0"
-j sh "xdotool mousemove_relative -- 0 20"
-k sh "xdotool mousemove_relative -- 0 -20"
-l sh "xdotool mousemove_relative -- 20 0"
+h sh "xdotool mousemove_relative -- -15 0"
+j sh "xdotool mousemove_relative -- 0 15"
+k sh "xdotool mousemove_relative -- 0 -15"
+l sh "xdotool mousemove_relative -- 15 0"
 
 # клики
 q click 1

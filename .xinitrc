@@ -12,7 +12,7 @@ xkbcomp -w 0 \
     -I"$HOME/.xkb" \
     -R"$HOME/.xkb" \
     "$HOME/.xkbrc" \
-    "$DISPLAY" &
+    "$DISPLAY" 
 
 # Обработка CapsLock + RightShift
 shift-shift \

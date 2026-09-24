@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if ! pgrep -f "urxvt -name dropdown" >/dev/null; then
-    urxvt -name dropdown &
+    urxvt -name dropdown -e tmux new-session -A -s dropdown &
     pid=$!
 
     # Если терминал закрыли через Ctrl+D / exit,

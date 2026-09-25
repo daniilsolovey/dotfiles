@@ -1,61 +1,99 @@
 [global]
-    font = Ubuntu Mono 13
-    allow_markup = yes
-    format = "%b"
-    sort = no
-    indicate_hidden = yes
-    alignment = left
-    bounce_freq = 0
-    show_age_threshold = -1
-    word_wrap = yes
-    ignore_newline = no
-    # 46: skip numbers in vim from left
-    # 40: skip few lines from top
-    centering = "vertical"
-    geometry = "0-16+10"
-    transparency = 0
-    idle_threshold = 0
+    # monitor / position
+    monitor = 0
     follow = keyboard
-    sticky_history = yes
-    line_height = 3
-    separator_height = 1
-    padding = 8
-    horizontal_padding = 6
+
+    origin = top-right
+    offset = (16, 10)
+
+    # размеры как раньше
     width = 420
     height = (0, 700)
+    notification_limit = 0
+
+    # текст
+    font = Ubuntu Mono 13
+    markup = full
+    format = "%b"
+
+    alignment = left
+    vertical_alignment = center
+
+    word_wrap = yes
+    ellipsize = end
+    ignore_newline = no
+
+    show_age_threshold = -1
+    line_height = 3
+
+    # внешний вид
+    transparency = 5
+
+    corner_radius = 10
+    corners = all
+
+    frame_width = 2
+    frame_color = "#89b4fa"
+
+    gap_size = 8
+    separator_height = 0
     separator_color = frame
-    startup_notification = false
+
+    # отступы почти как в старом конфиге
+    padding = 8
+    horizontal_padding = 6
+    text_icon_padding = 10
+
+    # иконки
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus-Dark
+
+    # progress bar
+    progress_bar = true
+    progress_bar_height = 8
+    progress_bar_frame_width = 0
+    progress_bar_min_width = 150
+    progress_bar_max_width = 350
+    progress_bar_corner_radius = 4
+
+    # поведение
+    sort = no
+    indicate_hidden = yes
+
+    idle_threshold = 0
+
+    sticky_history = yes
+    history_length = 50
+
     dmenu = /usr/bin/dmenu -p dunst:
-    timeout = 3
-    browser = browser
+    browser = /usr/bin/firefox
 
-[frame]
-    width = 2
-    color = "#ffd700"
+    # mouse
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
 
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
 
 [urgency_low]
-    # vim text background
-    background = "#fcfcfc"
-     # vim text white
-    foreground = "#262626"
+    background = "#1e1e2e"
+    foreground = "#a6adc8"
+    frame_color = "#313244"
     timeout = 0
 
+
 [urgency_normal]
-    # vim secondary gray (airline right section)
-    background = "#fcfcfc"
-    # vim text white
-    foreground = "#262626"
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#89b4fa"
     timeout = 2
 
+
 [urgency_critical]
-    # unique gray-red color
-    background = "#fcfcfc"
-    # vim text white
-    foreground = "#262626"
+    background = "#1e1e2e"
+    foreground = "#f5e0dc"
+    frame_color = "#f38ba8"
     timeout = 1

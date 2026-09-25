@@ -48,12 +48,13 @@ bindsym $mod+F3 exec --no-startup-id ~/Scripts/volume-control-audio-sink up
 bindsym Mod4+F4 exec --no-startup-id ~/Scripts/mic-toggle
 
 # brightness
-bindsym $mod+F5 exec brightnessctl set 10%-
-bindsym $mod+F6 exec brightnessctl set +10%
+bindsym $mod+F5 exec --no-startup-id ~/Scripts/brightness-control down
+bindsym $mod+F6 exec --no-startup-id ~/Scripts/brightness-control up
 
-#wifi
-bindsym $mod+F8 exec nmcli radio wifi off
-bindsym $mod+F9 exec nmcli radio wifi on
+# wifi
+bindsym $mod+F8 exec --no-startup-id sh -c 'nmcli radio wifi off && notify-send "" "Wi-Fi выключен"'
+bindsym $mod+F9 exec --no-startup-id sh -c 'nmcli radio wifi on && notify-send "" "Wi-Fi включен"'
+
 
 #lock screen
 bindsym $mod+F12 exec slock

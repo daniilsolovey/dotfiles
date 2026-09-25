@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+case "$1" in
+    down)
+        brightnessctl set 10%- >/dev/null
+        ;;
+    up)
+        brightnessctl set +10% >/dev/null
+        ;;
+    *)
+        exit 1
+        ;;
+esac
+
+brightness=$(brightnessctl -m | awk -F, '{print $4}')
+
+notify-send \
+    -h string:x-dunst-stack-tag:brightness \
+    "" \
+    "Яркость: $brightness"

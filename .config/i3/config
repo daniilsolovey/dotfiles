@@ -36,7 +36,7 @@ bindsym $mod+Return exec urxvt -e tmux
 # bindsym $mod+Return exec urxvt
 #bindsym $mod+s exec deepin-screen-recorder --no-notification
 bindsym $mod+s exec /home/operator/Scripts/maim-screenshot-area.sh
-bindsym $mod+w exec ~/go/bin/sensors-info-linux
+bindsym --release $mod+w exec --no-startup-id ~/go/bin/sensors-info-linux
 
 
 # volume control
